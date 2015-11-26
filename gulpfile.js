@@ -9,6 +9,7 @@ plumber     = require('gulp-plumber'),
 addsrc      = require('gulp-add-src'),
 sourcemaps  = require('gulp-sourcemaps'),
 minifyCss   = require('gulp-minify-css'),
+jshint      = require('gulp-jshint'),
 // minifyHTML  = require('gulp-minify-html'),
 bowerMain   = require('main-bower-files'),
 browserSync = require('browser-sync').create();
@@ -45,7 +46,7 @@ gulp.task('clean', function () {
 
 var BSReload = () => {browserSync.reload();}
 
-gulp.task('watch:js', ['inject:dev'], browserSync.reload);
+gulp.task('watch:js', ['inject:dev' , 'jshint'], browserSync.reload);
 gulp.task('watch:less', ['inject:dev'], BSReload);
 gulp.task('watch:php', ['php:build'], BSReload);
 
@@ -106,6 +107,16 @@ gulp.task('js:dist' , ['vendors'] ,  function () {
 });
 
 
+
+
+gulp.task('jshint', function () {
+    gulp.src([
+        path.app + '/js/app.js',
+        path.app + '/js/{directives,services,components,filters}/**/*.js',
+    ])
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish'));
+});
 
 
 
