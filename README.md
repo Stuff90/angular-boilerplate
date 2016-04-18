@@ -1,3 +1,2 @@
-# Ileotech website redisign
+# Angular Boilerplate
 ===
-Let's roll !

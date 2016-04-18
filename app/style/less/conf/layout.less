@@ -42,7 +42,7 @@
 	// --------------------------------
 
 	@font-size-default:   62.5%;
-	@font-family-default : "Proxima nova Thin", "serif";
+	@font-family-default : "Arial", "serif";
 
 
 
@@ -86,20 +86,6 @@
 	  		overflow: initial;
 	  	}
 	}
-
-
-    .sequence( @name , @sequenceWidth , @step , @path ) {
-        .keyframes( @name ; {
-           from { background-position:    0px; }
-             to { background-position: -@sequenceWidth; }
-        });
-
-        background-image: url(@path);
-        .animation( @name 2s steps(@step) infinite);
-        .animation-iteration-count(2);
-        .animation-direction(alternate);
-    }
-
 
 
 /*

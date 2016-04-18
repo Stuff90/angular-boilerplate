@@ -2,20 +2,9 @@
 
     'use strict';
 
-    angular.module('ileotech', [
-        'ui.router',
+    angular.module('projectName', []).config( appModuleConfig );
 
-        'ileotech.translation',
-        'ileotech.index',
-
-    ]).config([  '$urlRouterProvider' , '$translateProvider' , '$locationProvider' , ileotechModuleConfig ]);
-
-    function ileotechModuleConfig ( $urlRouterProvider , $translateProvider , $locationProvider ) {
+    function appModuleConfig () {
         console.info('Here come the sun !');
-
-        $urlRouterProvider.otherwise('/');
-        $locationProvider.html5Mode(true);
-        $translateProvider.preferredLanguage('en');
-        $translateProvider.useSanitizeValueStrategy('escapeParameters');
     }
-})();
+})()
