@@ -1,0 +1,30 @@
+{
+  "name": "ileotech",
+  "version": "1.0.0",
+  "homepage": "http://ileotech.com",
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "angular-translate": "~2.8.1",
+    "angular-socket-io": "~0.7.0",
+    "remixings": "https://github.com/christopher-ramirez/remixings.git",
+    "lesshat": "~3.0.2",
+    "bootstrap": "~3.3.6",
+    "angular-skrollr": "~0.1.4",
+    "skrollr": "~0.6.30"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.min.css",
+        "js.bootstrap.min.js"
+      ]
+    },
+    "remixings": {
+      "main": [
+        "remixins.less"
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/*
+ * -------------------------------------------------------------------------------------
+ *
+ * Supplies fonts decalration
+ * Filetype required are : *.eot , *.woff , *.ttf , *.svg
+ *
+ * -------------------------------------------------------------------------------------
+*/
+
+
+/*
+ * The mixin being used for fonts declaration is the following
+ * 	@name 		: The name to be used for this font
+ * 	@filename 	: The relative path to font file without the extension (all files must have the same name)
+*/
+
+	.fontFace( @name , @filename ){
+		@font-face {
+		    font-family: @name;
+		    src:url("@{filename}.eot");
+		    src:url("@{filename}.eot?#iefix") format("embedded-opentype"),
+		    url("@{filename}.woff") format("woff"),
+		    url("@{filename}.ttf") format("truetype"),
+		    url("@{filename}.svg#@{name}") format("svg");
+		    font-weight: normal;
+		    font-style: normal;
+		}
+	}
+
+
+
+/*
+ * To add a font, here is the required mixin call :
+ *
+ *
+ * 		.fontFace( "Gotham Medium" 	, "res/font/din/Gotham-Medium" );
+ *  	.fontFace( "Gotham Light"	, "res/font/din/Gotham-Light" );
+ *
+ *
+ *
+ * Make sure to handle the whole weight needed by the project.
+ * use the following mixin is a good example to do so.
+ *
+ *		.gotham( @size , @weight : 300 , @color : inherit ) {
+ *		    font-family:'Gotham Medium';
+ *		    font-weight:@weight;
+ *		    .font-size(@size);
+ *		    color:@color;
+ *		}
+ *
+ *		.gotham( @size , @weight : 300 , @color : inherit ) when ( @weight = 100 ) {
+ *		    font-family:'Gotham Light';
+ *		}
+ *
+*/
+
+
+
+/*
+ * =====================================================================================
+ * Setup fonts here
+ * =====================================================================================
+*/
+
+
+.fontFace( "Proxima nova Bold" 	    , "/app/resources/fonts/Proxima Nova/Proxima nova Bold" );
+.fontFace( "Proxima nova Thin" 	    , "/app/resources/fonts/Proxima Nova/Proxima nova Thin" );
+.fontFace( "Proxima nova Light" 	, "/app/resources/fonts/Proxima Nova/Proxima nova Light" );
+.fontFace( "Proxima nova Regular" 	, "/app/resources/fonts/Proxima Nova/Proxima nova Regular" );
+
